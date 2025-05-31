@@ -32,6 +32,11 @@ impl Display for Matrix {
     }
 }
 
+fn transpose(matrix: Matrix) -> Matrix {
+    // Transpose the matrix by swapping the elements.
+    Matrix(matrix.0, matrix.2, matrix.1, matrix.3)
+}
+
 fn main() {
     let pair = (1, true);
     println!("Pair is {:?}", pair);
@@ -45,8 +50,9 @@ fn main() {
     println!("{:?}, {:?}, {:?}, {:?}", a, b, c, d);
 
     let matrix = Matrix(1.1, 1.2, 2.1, 2.2);
-    println!("{:?}", matrix);
-    println!("{}", matrix);
+    println!("Debug:\n{:?}", matrix);
+    println!("Display:\n{}", matrix);
+    println!("Transposed matrix:\n{}", transpose(matrix));
 
     let complex = Complex { real: 3.0, imag: 4.0 };
     println!("{:?}", complex);
